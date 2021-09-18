@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lucky7Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-LG-pfR">
+                                <rect key="frame" x="35" y="190" width="250" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="ulf-Ci-q6m">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ulf-Ci-q6m" secondAttribute="height" multiplier="1:1" id="Klr-50-7mz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice6" translatesAutoresizingMaskIntoConstraints="NO" id="m40-aK-88y">
+                                        <rect key="frame" x="126" y="0.0" width="124" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="m40-aK-88y" firstAttribute="leading" secondItem="ulf-Ci-q6m" secondAttribute="trailing" id="93V-hX-Sr0"/>
+                                    <constraint firstAttribute="height" constant="100" id="Ejd-5o-JET"/>
+                                    <constraint firstAttribute="width" constant="250" id="ruZ-Ld-Lo7"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Score = 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y27-Vf-MXT">
+                                <rect key="frame" x="105.5" y="350" width="109.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="wUU-Ze-iLY">
+                                <rect key="frame" x="25" y="94" width="270" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCJ-xJ-4Qa">
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Below 7"/>
+                                        <connections>
+                                            <action selector="below7pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQ6-a2-obY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-tx-y7L">
+                                        <rect key="frame" x="99" y="0.0" width="69" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Lucky 7"/>
+                                        <connections>
+                                            <action selector="lucky7pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RGH-va-I3f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBl-bG-7om">
+                                        <rect key="frame" x="198" y="0.0" width="72" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Above 7"/>
+                                        <connections>
+                                            <action selector="above7pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaP-vX-88o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y27-Vf-MXT" firstAttribute="top" secondItem="qMe-LG-pfR" secondAttribute="bottom" constant="60" id="9Xt-ao-bWd"/>
+                            <constraint firstItem="wUU-Ze-iLY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eqn-07-BMQ"/>
+                            <constraint firstItem="Y27-Vf-MXT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FEI-me-wmO"/>
+                            <constraint firstItem="qMe-LG-pfR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jW7-tG-Thx"/>
+                            <constraint firstItem="qMe-LG-pfR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="osv-Tf-VEF"/>
+                            <constraint firstItem="qMe-LG-pfR" firstAttribute="top" secondItem="wUU-Ze-iLY" secondAttribute="bottom" constant="60" id="wKr-i4-06J"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgOne" destination="ulf-Ci-q6m" id="4yB-IX-Iju"/>
+                        <outlet property="imgTwo" destination="m40-aK-88y" id="WUd-mN-cgL"/>
+                        <outlet property="lblScore" destination="Y27-Vf-MXT" id="LAg-pd-oSv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dice1" width="25" height="25"/>
+        <image name="Dice6" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
